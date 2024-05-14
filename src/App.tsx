@@ -8,11 +8,11 @@ const Form: FC<{
 }> = ({ onHide, onClear }) => {
   const [text1, setText1, clearText1] = usePersistedState(
     "init value 1",
-    "text1"
+    "text1",
   );
   const [text2, setText2, clearText2] = usePersistedState(
     "init value 2",
-    "text2"
+    "text2",
   );
 
   const hide = () => {
@@ -45,6 +45,16 @@ const Form: FC<{
       <div className="card">
         <button onClick={hide}>Hide Form</button>
         <button onClick={clear}>Clear Storage</button>
+      </div>
+      <div>
+        <p>
+          Hide Form: will unmount the Form component but persist the state in
+          storage.
+        </p>
+        <p>
+          Clear Storage: will unmount the Form component and clear the persisted
+          state from storage.
+        </p>
       </div>
     </>
   );
